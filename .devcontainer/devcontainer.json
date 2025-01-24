@@ -1,0 +1,38 @@
+{
+  "name": "ROS Noetic Development Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".",
+    "args": {
+      "WORKSPACE": "${containerWorkspaceFolder}"
+    }
+  },
+  "runArgs": [
+    "--network=host",
+    "--cap-add=SYS_PTRACE",
+    "--security-opt=seccomp:unconfined",
+    "--security-opt=apparmor:unconfined",
+    "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+    "--volume=/mnt/wslg:/mnt/wslg",
+    "--ipc=host",
+    "--device=/dev/dri",
+    "--device=/dev/kfd",
+    "--group-add=video",
+    "--cap-add=NET_ADMIN",
+    "--shm-size=8g"
+  ],
+  "mounts": [
+    "source=ros-conda-envs,target=/opt/conda/envs,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-python.python",
+        "ms-iot.vscode-ros"
+      ]
+    }
+  },
+  "remoteUser": "ros"
+}

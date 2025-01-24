@@ -1,0 +1,42 @@
+# ROS specific
+build/
+devel/
+install/
+logs/
+.catkin_tools/
+.catkin_workspace
+
+# Python
+*.py[cod]
+__pycache__/
+*.so
+
+# IDE specific
+.idea/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Backup files
+*~
+*.bak
+
+# Compiled files
+*.o
+*.a
+*.so
+*.dylib
+
+# ROS bags
+*.bag
+
+# Custom message generation
+**/msg_gen/
+**/srv_gen/
+
+# Documentation
+doc/
+docs/
